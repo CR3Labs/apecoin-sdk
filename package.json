@@ -1,7 +1,7 @@
 {
-  "name": "ts-npm-package-boilerplate",
-  "version": "0.2.4",
-  "description": "TypeScript NPM Module Boilerplate",
+  "name": "apecoin-sdk",
+  "version": "0.0.1",
+  "description": "ApeCoin Typescript SDK",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -9,7 +9,7 @@
     "format": "prettier --write \"src/**/*.(js|ts)\"",
     "lint": "eslint src --ext .js,.ts",
     "lint:fix": "eslint src --fix --ext .js,.ts",
-    "test": "jest --config jest.config.js",
+    "test": "jest --config jest.config.js --forceExit",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
@@ -18,24 +18,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hebertcisco/ts-npm-package-boilerplate.git"
+    "url": "git+https://github.com/CR3Labs/apecoin-sdk.git"
   },
   "keywords": [
     "boilerplate",
     "typescript"
   ],
-  "author": "Hebert Cisco",
+  "author": "MIKER",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hebertcisco/ts-npm-package-boilerplate/issues"
-  },
-  "homepage": "https://github.com/hebertcisco/ts-npm-package-boilerplate#readme",
   "devDependencies": {
+    "@types/fs-extra": "^11.0.3",
     "@types/jest": "29.4.0",
     "@typescript-eslint/eslint-plugin": "5.54.0",
     "@typescript-eslint/parser": "5.52.0",
+    "axios": "^1.6.0",
     "eslint": "8.35.0",
     "eslint-plugin-jest": "27.2.1",
+    "ethers": "^5.7.2",
+    "fs-extra": "^11.1.1",
     "jest": "29.4.3",
     "prettier": "2.8.4",
     "ts-jest": "29.0.5",
