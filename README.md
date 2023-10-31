@@ -1,5 +1,7 @@
 # ApeCoin SDK
 
+![Alt text](.github/images/banner.png?raw=true "ApeCoin SDK Banner")
+
 Better insight into ApeCoin data is critical for a healthy functioning DAO. 
 
 Existing dashboards and tools (such as Dune Analytics) are fairly restrictive in how they can be used and they typically cost money to make personal use of the data.
@@ -46,6 +48,72 @@ output will look like this:
 // backfill snapshot proposal votes
 await sdk.backfillSnapshot(offset, limit);
 
+```
+
+**Retrieving ApeCoin Staking Data**
+
+```typescript
+// get the overall apecoin pool staking stats
+const totals = await sdk.getStakeTotals();
+
+/* Example result:
+ {
+    counts: { '0': 38, '1': 10, '2': 27, '3': 11 },
+    pools: {
+      '0': '73672.405488529540367431',
+      '1': '73854.356349495086234771',
+      '2': '52829.519134280342052984',
+      '3': '8460.185468769419617483'
+    }
+  }
+ */
+
+// get a specific wallets staking data
+const wallet = await sdk.getWalletStakes('0x44102F31554D54Bfc66DA909E607a8549A9F4E0A');
+
+/* Example response:
+{
+      address: '0x44102F31554D54Bfc66DA909E607a8549A9F4E0A',
+      stakes: { '0': 0, '1': 10094, '2': 8168, '3': 2568 },
+      tokens: [
+        {
+          type: 'mayc',
+          token: '8828',
+          amount: 2042,
+          pair: '7113',
+          pairAmount: 856
+        },
+        {
+          type: 'mayc',
+          token: '9384',
+          amount: 2042,
+          pair: '573',
+          pairAmount: 856
+        },
+        {
+          type: 'mayc',
+          token: '6418',
+          amount: 2042,
+          pair: null,
+          pairAmount: 0
+        },
+        {
+          type: 'mayc',
+          token: '18582',
+          amount: 2042,
+          pair: null,
+          pairAmount: 0
+        },
+        {
+          type: 'bayc',
+          token: '4291',
+          amount: 10094,
+          pair: '5255',
+          pairAmount: 856
+        }
+      ]
+    }
+*/
 ```
 
 ## Additional Notes

@@ -32,6 +32,7 @@ describe('ApeCoin SDK', () => {
 
   test('should get a wallets cached nft stakes', async () => {
     const d = await sdk.getWalletStakes('0x44102F31554D54Bfc66DA909E607a8549A9F4E0A');
+    console.log(d);
     expect(d?.tokens?.length).toBe(5);
     expect(d?.tokens?.[0]).toEqual({
       type: 'mayc',
