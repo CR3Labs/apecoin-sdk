@@ -14,6 +14,11 @@ describe('ApeCoin SDK', () => {
     expect(sdk).toBeTruthy();
   });
 
+  test('get props', async () => {
+    const all = await sdk.getSnapshotProposalVotes('0xfbb9e5d137081f844345a6abb24c7129a1b784d4fbeec4bd3e23afbcacbcfc14');
+    console.log(JSON.stringify(all, null, 2));
+  });
+
   test('should backfill logs', async () => {
     const r = await sdk.backfill(16119150, 16119800);
     expect(r.counts[0]).toBe(38);
